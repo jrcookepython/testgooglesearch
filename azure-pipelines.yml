@@ -13,6 +13,12 @@ strategy:
   matrix:
     Python38:
       python.version: '3.8'
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    appType: 'webApp'
+    WebAppName: 
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     Python39:
       python.version: '3.9'
     Python310:
